@@ -1,0 +1,1 @@
+Usei a solução de requisições assíncrona PURA do JS! Utilizando o XMLHttpRequest, sem promisses (promessas), ou alguma biblioteca externa.

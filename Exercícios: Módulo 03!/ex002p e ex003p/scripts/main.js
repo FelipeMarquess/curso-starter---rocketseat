@@ -2,7 +2,7 @@ let txt = document.getElementById('texto');
 let btn = document.querySelector('#btn');
 let container = document.getElementById('container');
 
-btn.onclick = function(){
+btn.onclick = () => {
     carregando();
     promessa()
     .then(function(repositorios){
@@ -31,13 +31,13 @@ function carregando(){
 }
 
 function promessa(){
-    return new Promise(function (resolve, reject){
+    return new Promise((resolve, reject) => {
         let xhr = new XMLHttpRequest();
 
         xhr.open('GET', `https://api.github.com/users/${txt.value}/repos`)
         xhr.send(null);
 
-        xhr.onreadystatechange = function (){
+        xhr.onreadystatechange = () => {
             if (xhr.readyState === 4){
                 if(xhr.status === 200){
                     resolve(JSON.parse(xhr.responseText));
